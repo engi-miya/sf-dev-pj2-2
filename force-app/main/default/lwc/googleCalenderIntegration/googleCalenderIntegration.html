@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Google Calenderの予定" >
+        <lightning-button label="予定を取得" variant="brand" onclick={handleFetchEvents}></lightning-button>
+        <template if:true={events}>
+            <ul>
+                <template for:each={events} for:item="event">
+                    <li key={event.id}>
+                        {event.summary} {event.start.dateTime}
+                    </li>
+                </template>
+            </ul>
+        </template>
+        <template if:true={error}>
+            <p>カレンダーのデータを取得できませんでした。</p>
+        </template>
+    </lightning-card>
+</template>

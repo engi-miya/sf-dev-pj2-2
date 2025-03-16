@@ -1,6 +1,6 @@
 public with sharing class GoogleCalendarService {
     // エンドポイントを定数として指定ログイン情報の名前とAPIのパラメータを指定
-    private static final String ENDPOINT = 'callout:Google_Calendar/primary/events?maxResults=10';
+    private static final String ENDPOINT = 'callout:Google_Calendar/calendars/primary/events?maxResults=10';
     @AuraEnabled (cacheable=true)
     public static List<Map<String, Object>> getCalenderEvents(){
         try {
